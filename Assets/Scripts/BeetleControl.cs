@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class BeetleControl : MonoBehaviour
 {
-    public SpriteRenderer sr;
+    public SpriteRenderer headSR;
+    public SpriteRenderer bodySR;
+    public SpriteRenderer colorSR;
     bool isMount;
     Rigidbody2D rd;
     Collider2D cd;
@@ -36,8 +38,12 @@ public class BeetleControl : MonoBehaviour
         rd.transform.Rotate(0, 0, turnValue * Time.deltaTime * 160 * moveFactor);
     }
 
-    public void SetColor(Color c)
+    public void SetupBeetle(int id, Color c)
     {
-        sr.color = c;
+        int sortOrder = id * 10;
+        headSR.sortingOrder = sortOrder;
+        bodySR.sortingOrder = sortOrder;
+        colorSR.sortingOrder = sortOrder + 1;
+        colorSR.color = c;
     }
 }

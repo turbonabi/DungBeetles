@@ -6,20 +6,16 @@ public class HomeManager : MonoBehaviour
 {
     public SpriteRenderer homeColor;
     public float score;
-    private BeetleControl playerBeetle;
-    public BeetleControl PlayerBeetle
+    public int PlayerId { private set; get; }
+    public BeetleControl PlayerBeetle { private set; get; }
+
+    public void SetBeetle(int id, BeetleControl bc)
     {
-        set
-        {
-            playerBeetle = value;
-            playerBeetle.SetColor(homeColor.color);
-        }
-        get
-        {
-            return playerBeetle;
-        }
+        PlayerId = id;
+        PlayerBeetle = bc;
+        PlayerBeetle.SetupBeetle(PlayerId, homeColor.color);
     }
-    public int PlayerId { set; get; }
+
 
     public void Activate()
     {

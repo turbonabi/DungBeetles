@@ -16,16 +16,18 @@ public class PlayManager : Singleton<PlayManager>
     private void Awake()
     {
         homes = new Dictionary<int, HomeManager>();
+        IsPlaying = false;
     }
 
-    void Start()
+    public void StartSetup()
     {
+        setupManager = FindObjectOfType<SetupManager>();
+        homes.Clear();
         HomeManager[] activeHomes = setupManager.SetupPlayground(playerCount);
         foreach (var home in activeHomes)
         {
             homes[home.PlayerId] = home;
         }
-
         IsPlaying = true;
     }
 

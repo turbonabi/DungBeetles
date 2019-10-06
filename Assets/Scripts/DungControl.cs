@@ -45,6 +45,6 @@ public class DungControl : MonoBehaviour
         col.enabled = false;
         rd.bodyType = RigidbodyType2D.Kinematic;
         Vector3 diff = transform.position - nextPos;
-        targetPos = nextPos + (diff * Random.Range(0, .7f));
+        targetPos = nextPos + (diff * Random.Range(-.2f, .7f));
     }
 }

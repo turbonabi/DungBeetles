@@ -32,8 +32,7 @@ public class SetupManager : MonoBehaviour
             BeetleControl bc = Instantiate<BeetleControl>(beetlePrefab);
             bc.transform.position = homes[homeIdx].transform.position;
             bc.transform.rotation = Quaternion.FromToRotation(Vector3.up, Vector3.zero - bc.transform.position);
-            activeHomes[i].PlayerBeetle = bc;
-            activeHomes[i].PlayerId = playerId;
+            activeHomes[i].SetBeetle(playerId, bc);
             activeHomes[i].Activate();
         }
 
@@ -50,7 +49,7 @@ public class SetupManager : MonoBehaviour
             float ratio = Random.Range(0, 1f);
             place *= (5 * (1.1f - ratio));
             float scale = 0.5f + (1f * ratio);
-            float mass = 0.1f + (0.4f * ratio);
+            float mass = 0.05f + (0.2f * ratio);
 
             DungControl dung = Instantiate<DungControl>(dungPrefab);
             dung.scorePoint = 5 + 10 * ratio;
