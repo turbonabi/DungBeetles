@@ -151,12 +151,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dungPrefab: {fileID: 1662972201119268289, guid: ade1351dceb0a4e4b9cab1e187a4526c,
     type: 3}
+  cornPrefab: {fileID: -6264028652880109414, guid: e523c7e2c67750641879c93696dfe9a6,
+    type: 3}
   homes:
   - {fileID: 1410612210}
   - {fileID: 1978126317}
   - {fileID: 1971679990}
   - {fileID: 1271819163}
-  beetlePrefab: {fileID: 5197036659987844306, guid: 6dada539d961d424a90c97ae38c8f75f,
+  beetlePrefab: {fileID: 7970443823684675105, guid: 6dada539d961d424a90c97ae38c8f75f,
     type: 3}
 --- !u!4 &25902304
 Transform:
@@ -907,7 +909,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputManager: {fileID: 1111332004}
-  setupManager: {fileID: 25902303}
+  setupManager: {fileID: 0}
   playerCount: 3
   winningScore: 50
 --- !u!4 &1447544736

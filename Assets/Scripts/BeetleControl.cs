@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class BeetleControl : MonoBehaviour
 {
-    public SpriteRenderer headSR;
     public SpriteRenderer bodySR;
     public SpriteRenderer colorSR;
     bool isMount;
@@ -41,7 +40,6 @@ public class BeetleControl : MonoBehaviour
     public void SetupBeetle(int id, Color c)
     {
         int sortOrder = id * 10;
-        headSR.sortingOrder = sortOrder;
         bodySR.sortingOrder = sortOrder;
         colorSR.sortingOrder = sortOrder + 1;
         colorSR.color = c;

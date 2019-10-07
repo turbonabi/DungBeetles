@@ -31,9 +31,12 @@ public class HomeManager : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         DungControl dc = collision.GetComponent<DungControl>();
-        score += dc.scorePoint;
-        dc.TurnOff(transform.position);
+        if (dc != null)
+        {
+            score += dc.scorePoint;
+            dc.TurnOff(transform.position);
 
-        PlayManager.Instance.ClaimWinner(PlayerId, score);
+            PlayManager.Instance.ClaimWinner(PlayerId, score);
+        }
     }
 }

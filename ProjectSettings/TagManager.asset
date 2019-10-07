@@ -19,8 +19,8 @@ TagManager:
   - Home
   - PlayerHead
   - PlayerBody
-  - 
-  - 
+  - Corn
+  - Shadow
   - 
   - 
   - 
@@ -46,6 +46,12 @@ TagManager:
     locked: 0
   - name: Home
     uniqueID: 3386236465
+    locked: 0
+  - name: Shadow
+    uniqueID: 3197946165
+    locked: 0
+  - name: Corn
+    uniqueID: 1364127285
     locked: 0
   - name: Dung
     uniqueID: 3505055413

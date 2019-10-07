@@ -5,6 +5,7 @@ using UnityEngine;
 public class SetupManager : MonoBehaviour
 {
     public DungControl dungPrefab;
+    public CornControl cornPrefab;
     public HomeManager[] homes;
     public BeetleControl beetlePrefab;
 
@@ -19,6 +20,7 @@ public class SetupManager : MonoBehaviour
     public HomeManager[] SetupPlayground(int playerCount)
     {
         AddDungBalls(playerCount * (10 + Random.Range(-1,4)));
+        AddCorns(playerCount * (3 + Random.Range(0, 2)));
 
         int[] idxOrder = GetRandomeOrder(homes.Length);
         homeDictionary = new Dictionary<int, HomeManager>(playerCount);
@@ -44,8 +46,7 @@ public class SetupManager : MonoBehaviour
         for (int i = 0; i < dungCount; i++)
         {
 
-            Vector3 place = Vector2.up;
-            place = Quaternion.AngleAxis(Random.Range(0, 360f), Vector3.forward) * place;
+            Vector3 place = Quaternion.AngleAxis(Random.Range(0, 360f), Vector3.forward) * Vector2.up;
             float ratio = Random.Range(0, 1f);
             place *= (5 * (1.1f - ratio));
             float scale = 0.5f + (1f * ratio);
@@ -55,7 +56,21 @@ public class SetupManager : MonoBehaviour
             dung.scorePoint = 5 + 10 * ratio;
             dung.transform.localScale *= scale;
             dung.transform.position = place;
+            dung.transform.rotation = Quaternion.Euler(0, 0, Random.Range(0, 365));
             dung.SetMass(mass);
+        }
+    }
+
+    public void AddCorns(int count)
+    {
+        for (int i = 0; i < count; i++)
+        {
+            Vector3 place = Quaternion.AngleAxis(Random.Range(0, 360f), Vector3.forward) * Vector2.up;
+            float ratio = Random.Range(0, 1f);
+            place *= (6 * (1.1f - ratio));
+            CornControl corn = Instantiate<CornControl>(cornPrefab);
+            corn.transform.position = place;
+            corn.transform.rotation = Quaternion.Euler(0, 0, Random.Range(0, 365));
         }
     }
 

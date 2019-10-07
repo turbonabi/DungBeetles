@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayManager : Singleton<PlayManager>
 {
     public InputManager inputManager;
+    [HideInInspector]
     public SetupManager setupManager;
 
     public int playerCount;
@@ -17,6 +18,7 @@ public class PlayManager : Singleton<PlayManager>
     {
         homes = new Dictionary<int, HomeManager>();
         IsPlaying = false;
+        StartSetup();
     }
 
     public void StartSetup()

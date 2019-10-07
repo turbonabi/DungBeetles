@@ -67,7 +67,7 @@ InputManager:
     snap: 1
     invert: 1
     type: 2
-    axis: 4
+    axis: 3
     joyNum: 1
   - serializedVersion: 3
     m_Name: Beetle_4_Turn
@@ -83,7 +83,7 @@ InputManager:
     snap: 1
     invert: 1
     type: 2
-    axis: 4
+    axis: 3
     joyNum: 2
   - serializedVersion: 3
     m_Name: Vertical
